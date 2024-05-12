@@ -1,66 +1,7 @@
-## Foundry
+## Cross-Chain Vulnerability PoC using Pigeon
+This repository demonstrates how to use the Pigeon library to perform a Proof of Concept (PoC) of a cross-chain vulnerability in a vulnerable smart contract. The PoC exploits a lack of sender validation in the vulnerable contract, allowing an attacker to manipulate the contract's state maliciously.
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+The `VulnerableContract` is a simple contract that receives cross-chain messages through the Hyperlane protocol. However, it has a vulnerability where it does not validate the sender of the message, allowing anyone to update the value state variable.
+The CrossChainBugPoc contract is a test contract that uses the Pigeon library to simulate cross-chain interactions and demonstrate the vulnerability. It performs the following steps:
 
-Foundry consists of:
-
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+For more information on using the Pigeon library, refer to the [Pigeon](https://github.com/exp-table/pigeon) documentation.
